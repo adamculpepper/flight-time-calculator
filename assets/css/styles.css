@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap');
+
+/* Globals */
+html {overflow-y:scroll;}
+html, body {height:100%;}
+body {
+	display:flex;
+	flex-direction:column;
+	font-family:'Roboto', sans-serif;
+	color:#222;
+
+	
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	
+
+	/* grid background, modified version of http://lea.verou.me/css3patterns/#checkerboard */
+	/*
+	background-color:#f9f9f9;
+	background-image:linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), 
+	linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+	background-size:20px 20px;
+	background-position:0 0, 10px 10px;
+	*/
+}
+a, button {transition:all 0.50s;}
+a:hover {text-decoration:none;}
+label {font-weight:700; margin-bottom:0;}
+label,
+input[type='text'],
+input[type='email'] {display:inline-block; text-align:center;}
+
+
+input {min-width:40px; width:auto;}
+
+
+.ghost-value {background:lightsalmon;}
+
+.form-control {background:rgba(0, 0, 0, 0.1);}
+
+.hidden {display:none;}
+.disabled {cursor:not-allowed!important;}
+.btn,
+.form-control {border-radius:0;}
+.red {background:lightsalmon!important;}
+.blue {background:lightblue!important;}
+.green {background:lightgreen!important;}
+
+.btn[disabled],
+.btn.disabled {cursor:not-allowed!important; opacity:.40;}
+
+#content {padding-top:20px;}
+
+/* ------------------------------ */
+
+/* Bootstrap Resets */
+.card {border-radius:0; border:0; background:rgba(0, 0, 0, 0.03);}
+
+
+
+.card .card-body,
+.card .card-body .form-control {font-size:35px;}
+
+
+.card .card-body {line-height:65px;}
+.card .card-body .form-control {line-height:40px;}
+
+.timepicker:hover,
+.form-control:hover {cursor:pointer;}
+
+.toggle-hours-minutes {border-bottom:3px solid lightsalmon;}
+.toggle-hours-minutes:hover {cursor:pointer;}
+
+
+
+#time-result {background:rgba(0, 0, 0, 0.03);}
+
+
+/* ------------------------------ */
+
+/* Content Styles */
+header, footer {background:#555; padding:20px; background:#4b515c;}
+
+header, header a,
+footer, footer a {color:#ccc;}
+header a, footer a {display:inline-block; padding:5px 10px; background:rgba(255, 255, 255, 0.2);}
+header a:hover, footer a:hover {color:#222; background:rgba(255, 255, 255, 0.3);}
+
+header .logo {font-size:30px;}
+header .logo a {color:#ddd; font-weight:bold; letter-spacing:1px;}
+header .logo a:hover {color:#fff;}
+
+header #submit-new .dropdown {}
+header #submit-new .dropdown button {font-weight:bold; color:#ddd; font-size:20px; padding:5px 10px; background:rgba(255, 255, 255, 0.2); border:0; letter-spacing:1px; text-transform:uppercase;}
+header #submit-new .dropdown button:hover {color:#fff; background:rgba(255, 255, 255, 0.3); cursor:pointer;}
+header #submit-new .dropdown button:after {display:none;}
+header #submit-new .dropdown .dropdown-menu {padding:0;}
+ 
+footer {font-size:25px; flex-shrink:0;}
+footer .row {width:100%;}
+
+#content {flex:1 0 auto;}
+
+/* ------------------------------ */
+
+/* Helper Styles */
+
+/* Add-on: Bootstrap 4, hidden-{breakpoint}-{up/down} */
+/* taken from Bootstrap 4, alpha 6 */
+.hidden-xs-up {display:none!important;}
+@media (max-width:575px)	{ .hidden-xs-down {display:none!important;}	}
+@media (min-width:576px)	{ .hidden-sm-up {display:none!important;}	}
+@media (max-width:767px)	{ .hidden-sm-down {display:none!important;}	}
+@media (min-width:768px)	{ .hidden-md-up {display:none!important;}	}
+@media (max-width:991px)	{ .hidden-md-down {display:none!important;}	}
+@media (min-width:992px)	{ .hidden-lg-up {display:none!important;}	}
+@media (max-width:1199px)	{ .hidden-lg-down {display:none!important;}	}
+@media (min-width:1200px)	{ .hidden-xl-up {display:none!important;}	}
+.hidden-xl-down {display:none!important;}
+
+/* Add-on: Bootstrap 4, hidden-{breakpoint} */
+/* taken from Bootstrap 3.3.6, converted to Bootstrap 4 */
+@media (max-width:575px)	{ .hidden-xs {display:none!important;} }
+@media (min-width:576px) and (max-width:767px)	{ .hidden-sm {display:none!important;} }
+@media (min-width:768px) and (max-width:991px)	{ .hidden-sm {display:none!important;} }
+@media (min-width:992px) and (max-width:1199px)	{ .hidden-md {display:none!important;} }
+@media (min-width:1200px)	{ .hidden-lg {display:none!important;} }
+
+/* ------------------------------ */
+
+/* Select2 styles */
+.select2-selection {border-radius:0;}
+.select2-results__option--highlighted {background-color:rgba(0, 0, 0, 0.20)!important; color:#eee!important;}
+
+.select2-dropdown,
+.select2-container--default .select2-selection--single,
+.dropdown .dropdown-menu {background-color:rgba(255, 255, 255, 0.60);}
+
+.select2-dropdown,
+.dropdown .dropdown-menu {backdrop-filter:blur(4px); border-radius:0; border:0;}
+
+.select2-dropdown .select2-results__option,
+.dropdown .dropdown-item {line-height:30px; color:#555; padding:5px 10px;}
+
+.select2-dropdown .select2-results__option:hover,
+.dropdown .dropdown-item:hover {background-color:rgba(0, 0, 0, 0.07); color:#000;}
+
+/* ------------------------------ */
+
+/* Datetime Picker styles */
+.bootstrap-datetimepicker-widget {background:rgba(255, 255, 255, 0.90); backdrop-filter:blur(4px);}
+.bootstrap-datetimepicker-widget table td,
+.bootstrap-datetimepicker-widget table th {border-radius:0; padding:7px;}
+.bootstrap-datetimepicker-widget table td:not(.disabled):hover {background:rgba(0, 0, 0, 0.1);}
+.bootstrap-datetimepicker-widget table td span {margin:0;}
+.bootstrap-datetimepicker-widget table td.separator {font-size:25px; font-family:'Verdana', 'Tahoma';}
+.bootstrap-datetimepicker-widget table td.today {background:rgba(0, 0, 0, 0.10);}
+
+.bootstrap-datetimepicker-widget table thead tr:nth-of-type(1) {background:#fafafa;}
+.bootstrap-datetimepicker-widget table thead tr:nth-of-type(2) th {padding:10px;}
+
+.bootstrap-datetimepicker-widget .glyphicon {font-family:'FontAwesome';}
+.bootstrap-datetimepicker-widget .glyphicon-chevron-up:before {content:"\f077"!important;}
+.bootstrap-datetimepicker-widget .glyphicon-chevron-down:before {content:"\f078"!important;}
+.bootstrap-datetimepicker-widget .glyphicon-chevron-left:before {content:"\f053"!important;}
+.bootstrap-datetimepicker-widget .glyphicon-chevron-right:before {content:"\f054"!important;}
+
+/* ------------------------------ */
+
+/* Parsley Form Validation */
+[data-parsley-validate] .parsley-errors-list {
+  margin:2px 0 3px;
+  padding:0;
+  list-style-type:none;
+  font-size:0.9em;
+  line-height:0.9em;
+  opacity:0;
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+[data-parsley-validate] .parsley-errors-list.filled {opacity:1;}
+[data-parsley-validate] .parsley-error {background-color:rgba(255, 0, 0, 0.03); border:1px solid rgba(255, 0, 0, 0.2); color:#B94A48;}
+[data-parsley-validate] .has-error label {color:#ff3547;}
+[data-parsley-validate] ul.parsley-errors-list {margin-bottom:10px;}
+[data-parsley-validate] ul.parsley-errors-list li {color:#ff3547; font-style:italic; /*font-size:12px;*/ margin-top:5px; line-height:12px;}
+
+/* ------------------------------ */
+
+/* Icons Inside Inputs */
+.icon-wrapper {position:relative; width:100%;}
+.icon-wrapper:before {position:absolute; top:50%; transform:translateY(-50%); right:10px; font-family:'FontAwesome'; color:#000; opacity:0.3;}
+
+/* ------------------------------ */
+
+/* Scrollbar Styles */
+::-webkit-scrollbar			{background-color:#ddd; width:10px;}
+::-webkit-scrollbar-track	{background-color:#ddd;}
+::-webkit-scrollbar-thumb	{background-color:#aaa;}
+::-webkit-scrollbar-button	{display:none;}
+
+/* ------------------------------ */
+
+/* Animated Content Loader */
+.loading-spinner {
+	pointer-events:none;
+	position:relative;
+	cursor:default;
+	-webkit-user-select:none;
+		-ms-user-select:none;
+			user-select:none;
+}
+
+.loading-spinner:after,
+.loading-spinner:before {
+	position:absolute;
+	display:block;
+	content:'';
+}
+
+.loading-spinner:before {
+	z-index:1000;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background:rgba(255,255,255,.8);
+}
+
+.loading-spinner:after {
+	z-index:1001;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:100px;
+	height:100px;
+	margin:-50px 0 0 -50px;
+	-webkit-animation:form-spin .6s linear;
+	animation:form-spin .6s linear;
+	-webkit-animation-iteration-count:infinite;
+	animation-iteration-count:infinite;
+	border-width:20px;
+	border-style:solid;
+	border-color:#767676 rgba(0,0,0,.1) rgba(0,0,0,.1);
+	border-radius:999px;
+}
+
+.loading-spinner-inverted:before {
+	background:rgba(0,0,0,.45);
+}
+
+.loading-spinner-inverted:after {
+	border-color:#ccc rgba(255,255,255,.2) rgba(255,255,255,.2);
+}
+
+@-webkit-keyframes form-spin{
+	from{
+		-webkit-transform:rotate(0);
+		transform:rotate(0)
+	}
+	to{
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg)
+	}
+}
+
+@keyframes form-spin{
+	from{
+		-webkit-transform:rotate(0);
+		transform:rotate(0)
+	}
+	to{
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg)
+	}
+}
