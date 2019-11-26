@@ -7,7 +7,7 @@ body {
 	display:flex;
 	flex-direction:column;
 	font-family:'Roboto', sans-serif;
-	color:#222;
+	color:#444;
 	background-image:url(../img/noise.png);
 	-webkit-user-select:none;
 	-khtml-user-select:none;
@@ -26,6 +26,8 @@ input[type='email'] {display:inline-block; text-align:center;}
 .hidden {display:none;}
 .btn,
 .form-control {border-radius:0; border:0; background:rgba(0, 0, 0, 0.1);}
+.form-control {color:#000;}
+.form-control:focus {background:rgba(0, 0, 0, 0.3);}
 .ghost-value {display:none;}
 .red {background:lightsalmon!important;}
 .blue {background:lightblue!important;}
@@ -47,7 +49,7 @@ header .logo a {font-weight:bold; letter-spacing:1px;}
 footer {font-size:25px; flex-shrink:0;}
 footer .row {width:100%;}
 
-#content {flex:1 0 auto; padding-top:20px;}
+#content {flex:1 0 auto; padding:20px 0;}
 
 .timepicker:hover,
 .form-control:hover,
