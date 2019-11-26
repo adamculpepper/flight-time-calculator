@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap');
 
 /* Globals */
-html {overflow-y:scroll;}
 html, body {height:100%;}
 body {
 	display:flex;
 	flex-direction:column;
 	font-family:'Roboto', sans-serif;
 	color:#444;
+	background-color:#cdb8ff;
 	background-image:url(../img/noise.png);
 	-webkit-user-select:none;
-	-khtml-user-select:none;
-	-moz-user-select:none;
-	-ms-user-select:none;
-	user-select:none;
+	 -khtml-user-select:none;
+	   -moz-user-select:none;
+	    -ms-user-select:none;
+	        user-select:none;
 	-webkit-animation:background 10s infinite;
+			animation:background 10s infinite;
 }
 a, button {transition:all 0.50s;}
 a:hover {text-decoration:none;}
@@ -25,9 +26,9 @@ input[type='email'] {display:inline-block; text-align:center;}
 
 .hidden {display:none;}
 .btn,
-.form-control {border-radius:0; border:0; background:rgba(0, 0, 0, 0.1);}
+.form-control {border-radius:0; border:0; background:rgba(0, 0, 0, 0.10);}
 .form-control {color:#000;}
-.form-control:focus {background:rgba(0, 0, 0, 0.3);}
+.form-control:focus {background:rgba(0, 0, 0, 0.30);}
 .ghost-value {display:none;}
 .red {background:lightsalmon!important;}
 .blue {background:lightblue!important;}
@@ -36,12 +37,12 @@ input[type='email'] {display:inline-block; text-align:center;}
 /* ------------------------------ */
 
 /* Content Styles */
-header, footer {background:rgba(0, 0, 0, 0.3); padding:20px;}
+header, footer {background:rgba(0, 0, 0, 0.30); padding:20px;}
 
 header, header a,
 footer, footer a {color:#ddd;}
-header a, footer a {display:inline-block; padding:5px 10px; background:rgba(255, 255, 255, 0.2);}
-header a:hover, footer a:hover {color:#fff; background:rgba(255, 255, 255, 0.3);}
+header a, footer a {display:inline-block; padding:5px 10px; background:rgba(255, 255, 255, 0.20);}
+header a:hover, footer a:hover {color:#fff; background:rgba(255, 255, 255, 0.30);}
 
 header .logo {font-size:30px;}
 header .logo a {font-weight:bold; letter-spacing:1px;}
@@ -55,7 +56,7 @@ footer .row {width:100%;}
 .form-control:hover,
 .toggle-hours-minutes:hover {cursor:pointer;}
 
-.toggle-hours-minutes {border-bottom:3px solid lightsalmon;}
+.toggle-hours-minutes {border-bottom:3px solid #000; animation:underlines 10s infinite; -webkit-animation:underlines 10s infinite;}
 
 #date-flight-dummy-container {display:inline-block; width:0; height:0; overflow:hidden; margin:0; line-height:normal; padding:0; border:0; margin-left:-10px;}
 
@@ -78,7 +79,7 @@ footer .row {width:100%;}
 .bootstrap-datetimepicker-widget {background:rgba(255, 255, 255, 0.90); backdrop-filter:blur(4px);}
 .bootstrap-datetimepicker-widget table td,
 .bootstrap-datetimepicker-widget table th {border-radius:0; padding:7px;}
-.bootstrap-datetimepicker-widget table td:not(.disabled):hover {background:rgba(0, 0, 0, 0.1);}
+.bootstrap-datetimepicker-widget table td:not(.disabled):hover {background:rgba(0, 0, 0, 0.10);}
 .bootstrap-datetimepicker-widget table td span {margin:0;}
 .bootstrap-datetimepicker-widget table td.separator {font-size:25px; font-family:'Verdana', 'Tahoma';}
 .bootstrap-datetimepicker-widget table td.today {background:rgba(0, 0, 0, 0.10);}
@@ -108,7 +109,7 @@ footer .row {width:100%;}
 	-webkit-transition: all .3s ease-in;
 }
 [data-parsley-validate] .parsley-errors-list.filled {opacity:1;}
-[data-parsley-validate] .parsley-error {background-color:rgba(255, 0, 0, 0.03); border:1px solid rgba(255, 0, 0, 0.2); color:#B94A48;}
+[data-parsley-validate] .parsley-error {background-color:rgba(255, 0, 0, 0.03); border:1px solid rgba(255, 0, 0, 0.20); color:#B94A48;}
 [data-parsley-validate] .has-error label {color:#ff3547;}
 [data-parsley-validate] ul.parsley-errors-list {margin-bottom:10px;}
 [data-parsley-validate] ul.parsley-errors-list li {color:#ff3547; font-style:italic; margin-top:5px; line-height:12px;}
@@ -124,8 +125,3 @@ footer .row {width:100%;}
 /* ------------------------------ */
 
 /* Background Animations */
-@-webkit-keyframes background {
-	0%   { background-color: #b8e9ff; } /* blue */
-	50%  { background-color: #cdb8ff; } /* purple */
-	100% { background-color: #b8e9ff; } /* blue */
-}
