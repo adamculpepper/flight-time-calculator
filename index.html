@@ -21,8 +21,8 @@
 		<meta property="og:site_name" content="Flight Time Calculator">
 		<meta property="og:description" content="Calculate the time so you'll to make your flight on time">
 		<meta property="og:url" content="https://adamculpepper.github.io/flight-time-calculator">
-		<meta property="og:image" content="./assets/img/preview.png">
-		<meta name="twitter:image" content="./assets/img/preview.png">
+		<meta property="og:image" content="https://adamculpepper.github.io/flight-time-calculator/assets/img/preview.png">
+		<meta name="twitter:image" content="https://adamculpepper.github.io/flight-time-calculator/assets/img/preview.png">
 	</head>
 	<body>
 		<header>
@@ -34,13 +34,13 @@
 		<div id="content">
 			<div class="container">
 				<div class="row m-0">
-					<div class="col-lg-8 mx-auto">
+					<div class="col-lg-8 mx-auto p-0">
 						<div class="card">
 							<div class="card-body">
-								<span class="position-relative">
+								<span>
 									<span class="text">The flight date is</span>
 									<input type="text" id="date-flight" class="form-control" value="tomorrow">
-									<span class="hidden ghost-value"></span>
+									<div class="ghost-value"></div>
 									<span id="date-flight-dummy-container">
 										<input type="text" id="date-flight-dummy" class="datepicker" value="">
 									</span>
@@ -48,18 +48,18 @@
 								<span>
 									<span class="text">and boarding time is</span>
 									<input type="text" id="time-boarding" class="form-control timepicker" value="6:00 AM">
-									<span class="ghost-value"></span>
+									<div class="ghost-value"></div>
 								</span>
 								<span>
 									<span class="text">and the drive to the airport is</span>
-									<input type="text" id="time-drive" class="form-control" value="1">
-									<span class="ghost-value"></span>
+									<input type="text" id="time-drive" class="form-control" value="1" maxlength="3">
+									<div class="ghost-value"></div>
 									<span class="toggle-hours-minutes" data-time-type="hours">hours</span>.
 								</span>
 								<span>
 									<span class="text">The estimated time through security will take</span>
-									<input type="text" id="time-security" class="form-control" value="30">
-									<span class="ghost-value"></span>
+									<input type="text" id="time-security" class="form-control" value="30" maxlength="3">
+									<div class="ghost-value"></div>
 									<span class="toggle-hours-minutes" data-time-type="minutes">minutes</span>.
 								</span>
 								<div id="time-result" class="mt-4 px-3 font-weight-bold">result</div>

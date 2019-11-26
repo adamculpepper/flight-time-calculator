@@ -25,9 +25,10 @@ $(function() {
 	var calculateWidths = function(field) {
 		var value = field.val();
 		var ghost = field.next('.ghost-value');
+		ghost.css({'border': '5px solid red'});
 		ghost.text(value);
 
-		var width = ghost.width() + 10;
+		var width = ghost.outerWidth() + 10;
 		field.width(width);
 	}
 
@@ -39,30 +40,32 @@ $(function() {
 		var timeSecurity = $('#time-security').val();
 		var timeSecurityType = $('#time-security').parent().find('.toggle-hours-minutes').attr('data-time-type');
 		var datetime = dateFlight + ' ' + timeBoarding;
+		var result = moment(datetime, 'MM/DD/YYYY h:mm A').subtract(timeDrive, timeDriveType).subtract(timeSecurity, timeSecurityType);
 
-		if (isToday(dateFlight)) {
-			var result = 'today @ ' + moment(timeBoarding, 'HH:mm A').subtract(timeDrive, timeDriveType).subtract(timeSecurity, timeSecurityType).format('h:mm A');
-		} else if (isTomorrow(dateFlight)) {
-			var result = 'tomorrow @ ' + moment(timeBoarding, 'HH:mm A').subtract(timeDrive, timeDriveType).subtract(timeSecurity, timeSecurityType).format('h:mm A');
+		if (isToday(result)) {
+			var output = moment(result).format('h:mm A') + ' today';
+		} else if (isTomorrow(result)) {
+			var output = moment(result).format('h:mm A') + ' tomorrow';
 		} else {
-			var result = moment(datetime, 'MM/DD/YYYY HH:mm A').subtract(timeDrive, timeDriveType).subtract(timeSecurity, timeSecurityType).format('MM/DD/YYYY @ h:mm A');
+			var output = moment(result).format('MM/DD/YYYY @ h:mm A');
 		}
 
-		$('#time-result').text('Leave by ' + result);
+		$('#time-result').text('Leave by ' + output);
 	}
 
 	var init = function() {
 		$('.datepicker').val(moment().add(1, 'days').format('MM/DD/YYYY'));
+		$('#content').animate({'opacity': 1}, 500);
 
 		calculateResult();
 	}
 
-	$('.form-control').on('keyup', function() {
-		calculateWidths($(this));
-	});
-
 	$('.form-control').on('change', function() {
 		calculateResult();
+	});
+
+	$('.form-control').on('keyup', function() {
+		calculateWidths($(this));
 	});
 
 	$('.form-control').each(function() {
@@ -88,16 +91,23 @@ $(function() {
 	});
 
 	$('.timepicker').datetimepicker({
-		format: 'HH:mm A',
+		format: 'h:mm A',
 		format: 'LT'
 	}).on('dp.change', function(e) {
+		var time = moment(e.date).format('h:mm A');
+		$('#time-boarding').parent().find('.ghost-value').text(time);
+
+		// calculateWidths($('#time-boarding')) doesn't work here for some reason because of the "timepicker" class
+		// the span.ghost-value's width returns undefined, causing the calculateWidths() function to throw an error
+		var width = $('#time-boarding').parent().find('.ghost-value').outerWidth();
+		$('#time-boarding').width(width);
+
 		calculateResult();
 	});
 
 	$('.datepicker').datetimepicker({
 		format: 'MM/DD/YYYY',
 		format: 'L',
-		//widgetParent: 'body',
 		minDate: moment().millisecond(0).second(0).minute(0).hour(0), // crazy fix: https://github.com/Eonasdan/bootstrap-datetimepicker/issues/1302#issuecomment-141923309
 	}).on('dp.change', function(e) {
 		var date = moment(e.date).format('MM/DD/YYYY');
@@ -110,7 +120,10 @@ $(function() {
 		}
 
 		calculateResult();
+		calculateWidths($('#date-flight'));
 	}).on('dp.show', function (e) {
+		// fix for attaching the Datetimepicker widget to another element
+		// https://github.com/Eonasdan/bootstrap-datetimepicker/issues/790#issuecomment-234652413
 		var datepicker = $('body').find('.bootstrap-datetimepicker-widget:last');
 		var target = $('#date-flight');
 		var position = target.offset();

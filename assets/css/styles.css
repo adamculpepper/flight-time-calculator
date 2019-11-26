@@ -7,15 +7,15 @@ body {
 	flex-direction:column;
 	font-family:'Roboto', sans-serif;
 	color:#444;
-	background-color:#cdb8ff;
+	background-color:#b8e9ff;
 	background-image:url(../img/noise.png);
+	-webkit-animation:background 20s infinite;
+			animation:background 20s infinite;
 	-webkit-user-select:none;
 	 -khtml-user-select:none;
 	   -moz-user-select:none;
 	    -ms-user-select:none;
 	        user-select:none;
-	-webkit-animation:background 10s infinite;
-			animation:background 10s infinite;
 }
 a, button {transition:all 0.50s;}
 a:hover {text-decoration:none;}
@@ -50,13 +50,13 @@ header .logo a {font-weight:bold; letter-spacing:1px;}
 footer {font-size:25px; flex-shrink:0;}
 footer .row {width:100%;}
 
-#content {flex:1 0 auto; padding:20px 0;}
+#content {flex:1 0 auto; padding:20px 0; opacity:0;}
 
 .timepicker:hover,
 .form-control:hover,
 .toggle-hours-minutes:hover {cursor:pointer;}
 
-.toggle-hours-minutes {border-bottom:3px solid #000; animation:underlines 10s infinite; -webkit-animation:underlines 10s infinite;}
+.toggle-hours-minutes {border-bottom:3px solid #000; animation:underlines 20s infinite; -webkit-animation:underlines 20s infinite;}
 
 #date-flight-dummy-container {display:inline-block; width:0; height:0; overflow:hidden; margin:0; line-height:normal; padding:0; border:0; margin-left:-10px;}
 
@@ -125,3 +125,14 @@ footer .row {width:100%;}
 /* ------------------------------ */
 
 /* Background Animations */
+@-webkit-keyframes background {
+	0%   { background-color: #b8e9ff; } /* blue */
+	50%  { background-color: #cdb8ff; } /* purple */
+	100% { background-color: #b8e9ff; } /* blue */
+}
+
+@-webkit-keyframes underlines {
+	0%   { border-color: #4a93b1; } /* blue */
+	50%  { border-color: #977bd8; } /* purple */
+	100% { border-color: #4a93b1; } /* blue */
+}
