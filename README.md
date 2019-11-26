@@ -1,3 +1,3 @@
-# flight-time-calculator
+# :airplane: :clock3: flight-time-calculator
 
 https://adamculpepper.github.io/flight-time-calculator
