@@ -55,7 +55,7 @@ footer .row {width:100%;}
 .form-control:hover,
 .toggle-hours-minutes:hover {cursor:pointer;}
 
-.toggle-hours-minutes {border-bottom:3px solid #cdb8ff;}
+.toggle-hours-minutes {border-bottom:3px solid #6A8BBE;}
 
 #date-flight-dummy-container {display:inline-block; width:0; height:0; overflow:hidden; margin:0; line-height:normal; padding:0; border:0; margin-left:-10px;}
 
